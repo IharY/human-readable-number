@@ -21,37 +21,47 @@ module.exports = function toReadable (number) {
             if(i==1){
                 switch(result[0]){
                     case 'zero':
-                        result[0] = 'ten'
+                        result[1] = 'ten'
+                        result[0] = '';
                         break;
                     case 'one':
-                        result[0] = 'eleven'
+                        result[1] = 'eleven'
+                        result[0] = '';
                         break;
                     case 'two':
-                        result[0] = 'twelve'
+                        result[1] = 'twelve'
+                        result[0] = '';
                         break;
                     case 'three':
-                        result[0] = 'thirteen'
+                        result[1] = 'thirteen'
+                        result[0] = '';
                         break;
                     case 'four':
-                        result[0] = 'fourteen'
+                        result[1] = 'fourteen'
+                        result[0] = '';
                         break;
-                    case 'fife':
-                        result[0] = 'fifteen'
+                    case 'five':
+                        result[1] = 'fifteen'
+                        result[0] = '';
                         break;
                     case 'six':
-                        result[0] = 'sixteen'
+                        result[1] = 'sixteen'
+                        result[0] = '';
                         break;
                     case 'seven':
-                        result[0] = 'seventeen'
+                        result[1] = 'seventeen'
+                        result[0] = '';
                         break;
                     case 'eight':
-                        result[0] = 'eighteen'
+                        result[1] = 'eighteen'
+                        result[0] = '';
                         break;
                     case 'nine':
-                        result[0] = 'nineteen'
+                        result[1] = 'nineteen'
+                        result[0] = '';
                         break;           
                     }
-            }else if(i=2){
+            }else if(i==2){
                 result[2] = 'one hundred'
             }
             break;
@@ -167,6 +177,13 @@ module.exports = function toReadable (number) {
         result[0] = '';
     }
 
+    return result.reverse().join(' ').trim();
 
-    return result.reverse().join(' ');
+    let result2 = result.reverse().join(' ');
+
+    // if(result2[result.length-1] == ' '){
+    //     return result2.substring(0, (result2.length-2));
+    // }
+
+    // return result2;
 }
